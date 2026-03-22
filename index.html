@@ -3,114 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file for styles -->
 </head>
-<body>
-
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">ServiceLink</div>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#providers">Providers</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#signup" onclick="openModal('signupModal')">Sign Up</a></li>
-            <li><a href="#login" onclick="openModal('loginModal')">Log In</a></li>
-        </ul>
-    </nav>
-
+<body class="bg-gray-100">
     <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to ServiceLink</h1>
-        <p>Your one-stop solution for service providers</p>
+    <section class="bg-blue-600 text-white text-center p-20">
+        <h1 class="text-4xl font-bold">Welcome to ServiceLink</h1>
+        <p class="mt-4">Your one-stop solution for connecting with service providers!</p>
+        <a href="#" class="mt-8 bg-white text-blue-600 font-bold py-2 px-4 rounded">Get Started</a>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories">
-        <h2>Categories</h2>
-        <div class="category-list">
-            <!-- Categories will be populated here -->
+    <!-- Categories -->
+    <section class="p-10">
+        <h2 class="text-3xl text-center font-bold mb-8">Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded shadow">Category 1</div>
+            <div class="bg-white p-5 rounded shadow">Category 2</div>
+            <div class="bg-white p-5 rounded shadow">Category 3</div>
         </div>
     </section>
 
-    <!-- Providers Section -->
-    <section id="providers">
-        <h2>Our Providers</h2>
-        <div class="provider-list">
-            <!-- Provider details will be populated here -->
+    <!-- Providers -->
+    <section class="p-10 bg-gray-200">
+        <h2 class="text-3xl text-center font-bold mb-8">Providers</h2>
+        <div class="flex flex-wrap justify-center">
+            <div class="bg-white m-4 p-5 rounded shadow">Provider 1</div>
+            <div class="bg-white m-4 p-5 rounded shadow">Provider 2</div>
+            <div class="bg-white m-4 p-5 rounded shadow">Provider 3</div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-        <h2>Features</h2>
-        <div class="feature-list">
-            <!-- Features will be listed here -->
+    <!-- Features -->
+    <section class="p-10">
+        <h2 class="text-3xl text-center font-bold mb-8">Features</h2>
+        <ul class="list-disc mx-auto max-w-lg">
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+        </ul>
+    </section>
+
+    <!-- Statistics -->
+    <section class="p-10 bg-gray-200">
+        <h2 class="text-3xl text-center font-bold mb-8">Statistics</h2>
+        <p class="text-center">We have connected over 10,000 users!</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="p-10">
+        <h2 class="text-3xl text-center font-bold mb-8">Testimonials</h2>
+        <blockquote class="max-w-lg mx-auto text-center italic">"This service has changed my life!" - Happy Customer</blockquote>
+    </section>
+
+    <!-- FAQ -->
+    <section class="p-10 bg-gray-200">
+        <h2 class="text-3xl text-center font-bold mb-8">Frequently Asked Questions</h2>
+        <div class="max-w-lg mx-auto">
+            <details class="mb-4">
+                <summary class="text-lg font-bold">Question 1</summary>
+                <p class="px-4">Answer to question 1.</p>
+            </details>
+            <details class="mb-4">
+                <summary class="text-lg font-bold">Question 2</summary>
+                <p class="px-4">Answer to question 2.</p>
+            </details>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section id="statistics">
-        <h2>Statistics</h2>
-        <div class="statistic-list">
-            <!-- Statistics will be included here -->
+    <!-- Login/Signup Modals -->
+    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white p-5 rounded">
+            <h3 class="text-xl font-bold text-center">Login / Signup</h3>
+            <form class="mt-4">
+                <input type="text" placeholder="Email" class="border p-2 w-full mb-4" required>
+                <input type="password" placeholder="Password" class="border p-2 w-full mb-4" required>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Submit</button>
+                </div>
+            </form>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial-list">
-            <!-- Testimonials will be displayed here -->
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">
-            <!-- FAQs will be included here -->
-        </div>
-    </section>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <span class="close" onclick="closeModal('loginModal')">&times;</span>
-        <form>
-            <h2>Log In</h2>
-            <label for="loginEmail">Email:</label>
-            <input type="email" id="loginEmail" name="loginEmail" required>
-            <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" name="loginPassword" required>
-            <button type="submit">Submit</button>
-        </form>
     </div>
-
-    <!-- Sign Up Modal -->
-    <div id="signupModal" class="modal">
-        <span class="close" onclick="closeModal('signupModal')">&times;</span>
-        <form>
-            <h2>Sign Up</h2>
-            <label for="signupEmail">Email:</label>
-            <input type="email" id="signupEmail" name="signupEmail" required>
-            <label for="signupPassword">Password:</label>
-            <input type="password" id="signupPassword" name="signupPassword" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-        }
-        
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-    </script>
 </body>
 </html>
