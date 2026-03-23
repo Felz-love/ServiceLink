@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServiceLink - Customer Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-orange-500">Service<span class="text-blue-600">Link</span></h1>
+      <div class="flex gap-4 items-center">
+        <input type="text" placeholder="Search services..." class="hidden sm:block px-3 py-2 border rounded-full text-sm w-48" />
+        <button class="text-gray-600 text-2xl">🔍</button>
+        <button onclick="openMenu()" class="text-gray-600 text-2xl">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Marketplace Section (Stories like Facebook) -->
+  <section class="bg-white px-4 py-4 border-b">
+    <h3 class="text-sm font-bold text-gray-700 mb-3">Marketplace</h3>
+    <div class="flex gap-3 overflow-x-auto pb-2">
+      <!-- Forex -->
+      <div onclick="openTrading('forex')" class="min-w-[120px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
+        <p class="text-2xl mb-2">📈</p>
+        <p class="text-xs font-semibold">Forex Pair</p>
+      </div>
+      <!-- Commodity -->
+      <div onclick="openTrading('commodity')" class="min-w-[120px] bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
+        <p class="text-2xl mb-2">🛢️</p>
+        <p class="text-xs font-semibold">Commodity</p>
+      </div>
+      <!-- Stock -->
+      <div onclick="openTrading('stock')" class="min-w-[120px] bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
+        <p class="text-2xl mb-2">📊</p>
+        <p class="text-xs font-semibold">Stock</p>
+      </div>
+      <!-- Cryptocurrency -->
+      <div onclick="openTrading('crypto')" class="min-w-[120px] bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
+        <p class="text-2xl mb-2">🪙</p>
+        <p class="text-xs font-semibold">Cryptocurrency</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job/Service Feed -->
+  <section class="px-4 py-4 max-w-2xl mx-auto">
+    
+    <!-- Job Card 1 -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
+      <div class="flex items-start gap-3 mb-3">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full" alt="">
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-800">James O.</h4>
+          <p class="text-xs text-gray-500">Electrician • Lagos</p>
+        </div>
+        <button class="text-gray-500">⋯</button>
+      </div>
+      
+      <div class="bg-gray-100 rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">Professional Electrical Installation & Repair</p>
+        <p class="text-xs text-gray-600 mt-1">Electrical wiring, troubleshooting, and repair services for homes and offices.</p>
+      </div>
+
+      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
+        <span>⭐ 4.8 (245 reviews)</span>
+        <span>📍 Ikoyi, Lagos</span>
+      </div>
+
+      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
+    </div>
+
+    <!-- Job Card 2 -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
+      <div class="flex items-start gap-3 mb-3">
+        <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full" alt="">
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-800">Grace T.</h4>
+          <p class="text-xs text-gray-500">Graphic Designer • Abuja</p>
+        </div>
+        <button class="text-gray-500">⋯</button>
+      </div>
+      
+      <div class="bg-gray-100 rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">Logo Design & Brand Identity</p>
+        <p class="text-xs text-gray-600 mt-1">Professional logo design, business cards, and complete branding solutions.</p>
+      </div>
+
+      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
+        <span>⭐ 4.9 (312 reviews)</span>
+        <span>📍 Maitama, Abuja</span>
+      </div>
+
+      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
+    </div>
+
+    <!-- Job Card 3 -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
+      <div class="flex items-start gap-3 mb-3">
+        <img src="https://randomuser.me/api/portraits/men/50.jpg" class="w-12 h-12 rounded-full" alt="">
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-800">Ibrahim K.</h4>
+          <p class="text-xs text-gray-500">Plumber • Kano</p>
+        </div>
+        <button class="text-gray-500">⋯</button>
+      </div>
+      
+      <div class="bg-gray-100 rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">Plumbing & Water System Installation</p>
+        <p class="text-xs text-gray-600 mt-1">Complete plumbing services including installations, repairs, and maintenance.</p>
+      </div>
+
+      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
+        <span>⭐ 4.7 (189 reviews)</span>
+        <span>📍 Fagge, Kano</span>
+      </div>
+
+      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
+    </div>
+
+    <!-- Job Card 4 -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
+      <div class="flex items-start gap-3 mb-3">
+        <img src="https://randomuser.me/api/portraits/women/52.jpg" class="w-12 h-12 rounded-full" alt="">
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-800">Amara C.</h4>
+          <p class="text-xs text-gray-500">Web Developer • Port Harcourt</p>
+        </div>
+        <button class="text-gray-500">⋯</button>
+      </div>
+      
+      <div class="bg-gray-100 rounded-lg p-3 mb-3">
+        <p class="text-sm font-semibold text-gray-800">Website Development & Design</p>
+        <p class="text-xs text-gray-600 mt-1">Custom website design, responsive layouts, and e-commerce solutions.</p>
+      </div>
+
+      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
+        <span>⭐ 4.9 (428 reviews)</span>
+        <span>📍 Rumuola, Port Harcourt</span>
+      </div>
+
+      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
+    </div>
+
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
+    <button class="flex flex-col items-center gap-1 text-orange-500">
+      <span class="text-2xl">🏠</span>
+      <span class="text-xs">Home</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-gray-600">
+      <span class="text-2xl">🔍</span>
+      <span class="text-xs">Search</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-gray-600">
+      <span class="text-2xl">➕</span>
+      <span class="text-xs">Browse</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-gray-600">
+      <span class="text-2xl">💬</span>
+      <span class="text-xs">Messages</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-gray-600">
+      <span class="text-2xl">👤</span>
+      <span class="text-xs">Profile</span>
+    </button>
+  </nav>
+
+  <!-- Menu Sidebar -->
+  <div id="menuSidebar" class="hidden fixed inset-0 z-50">
+    <div class="absolute inset-0 bg-black/50" onclick="closeMenu()"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-lg p-4">
+      <button onclick="closeMenu()" class="text-2xl mb-4">✕</button>
+      <h3 class="text-lg font-bold mb-4">Menu</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Settings</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Account</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Bookings</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Reviews</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Help & Support</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-orange-500">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Trading Modal (Hidden by default) -->
+  <div id="tradingModal" class="hidden fixed inset-0 bg-black/60 z-50 flex justify-center items-end">
+    <div class="bg-white w-full h-5/6 rounded-t-3xl overflow-y-auto">
+      <div class="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
+        <h2 id="tradingTitle" class="text-lg font-bold"></h2>
+        <button onclick="closeTrading()" class="text-2xl">✕</button>
+      </div>
+      
+      <div class="p-4">
+        <!-- Trading Chart Placeholder -->
+        <div class="bg-gray-200 rounded-lg h-64 mb-4 flex items-center justify-center">
+          <p class="text-gray-600">📊 Trading Chart (View Only)</p>
+        </div>
+
+        <!-- Price Info -->
+        <div class="bg-gray-50 rounded-lg p-4 mb-4">
+          <div class="flex justify-between mb-2">
+            <span class="text-gray-600">Current Price</span>
+            <span id="priceValue" class="font-bold text-lg"></span>
+          </div>
+          <div class="flex justify-between mb-2">
+            <span class="text-gray-600">24h Change</span>
+            <span id="priceChange" class="font-bold text-lg text-green-600">+2.5%</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Market Cap</span>
+            <span id="marketCap" class="font-bold">$2.5T</span>
+          </div>
+        </div>
+
+        <!-- Chat Section -->
+        <h3 class="font-bold mb-3">Live Chat</h3>
+        <div class="bg-gray-100 rounded-lg p-3 h-48 mb-4 overflow-y-auto">
+          <p class="text-sm text-gray-600 mb-2">💬 Trading community discussing live prices...</p>
+          <p class="text-xs text-gray-500">(Chat feature coming soon)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openMenu() {
+      document.getElementById('menuSidebar').classList.remove('hidden');
+    }
+
+    function closeMenu() {
+      document.getElementById('menuSidebar').classList.add('hidden');
+    }
+
+    function openTrading(type) {
+      const tradingModal = document.getElementById('tradingModal');
+      const titleMap = {
+        'forex': '📈 Forex Pair',
+        'commodity': '🛢️ Commodity',
+        'stock': '📊 Stock',
+        'crypto': '🪙 Cryptocurrency'
+      };
+      const priceMap = {
+        'forex': 'EUR/USD: 1.0850',
+        'commodity': 'WTI Crude: $78.45',
+        'stock': 'AAPL: $182.52',
+        'crypto': 'BTC: $42,580'
+      };
+
+      document.getElementById('tradingTitle').textContent = titleMap[type];
+      document.getElementById('priceValue').textContent = priceMap[type];
+
+      tradingModal.classList.remove('hidden');
+    }
+
+    function closeTrading() {
+      document.getElementById('tradingModal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
