@@ -1,268 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ServiceLink - Customer Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceLink | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar for the Trading Ticker */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gradient-to-br from-blue-900 via-cyan-800 to-blue-700 text-white min-h-screen pb-20">
 
-  <!-- Header -->
-  <header class="bg-white shadow-sm sticky top-0 z-40">
-    <div class="px-4 py-3 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-orange-500">Service<span class="text-blue-600">Link</span></h1>
-      <div class="flex gap-4 items-center">
-        <input type="text" placeholder="Search services..." class="hidden sm:block px-3 py-2 border rounded-full text-sm w-48" />
-        <button class="text-gray-600 text-2xl">🔍</button>
-        <button onclick="openMenu()" class="text-gray-600 text-2xl">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Marketplace Section (Stories like Facebook) -->
-  <section class="bg-white px-4 py-4 border-b">
-    <h3 class="text-sm font-bold text-gray-700 mb-3">Marketplace</h3>
-    <div class="flex gap-3 overflow-x-auto pb-2">
-      <!-- Forex -->
-      <div onclick="openTrading('forex')" class="min-w-[120px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
-        <p class="text-2xl mb-2">📈</p>
-        <p class="text-xs font-semibold">Forex Pair</p>
-      </div>
-      <!-- Commodity -->
-      <div onclick="openTrading('commodity')" class="min-w-[120px] bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
-        <p class="text-2xl mb-2">🛢️</p>
-        <p class="text-xs font-semibold">Commodity</p>
-      </div>
-      <!-- Stock -->
-      <div onclick="openTrading('stock')" class="min-w-[120px] bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
-        <p class="text-2xl mb-2">📊</p>
-        <p class="text-xs font-semibold">Stock</p>
-      </div>
-      <!-- Cryptocurrency -->
-      <div onclick="openTrading('crypto')" class="min-w-[120px] bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition">
-        <p class="text-2xl mb-2">🪙</p>
-        <p class="text-xs font-semibold">Cryptocurrency</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Job/Service Feed -->
-  <section class="px-4 py-4 max-w-2xl mx-auto">
-    
-    <!-- Job Card 1 -->
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
-      <div class="flex items-start gap-3 mb-3">
-        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full" alt="">
-        <div class="flex-1">
-          <h4 class="font-bold text-gray-800">James O.</h4>
-          <p class="text-xs text-gray-500">Electrician • Lagos</p>
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/10 px-5 py-4 flex justify-between items-center">
+        <div class="cursor-pointer hover:text-orange-400 transition" onclick="window.location.href='menu.html'">
+            <i class="fas fa-bars text-2xl"></i> </div>
+        <div class="flex items-center">
+            <img src="servicelink.logo.png" alt="Logo" class="w-7 h-7 rounded-full mr-2">
+            <h1 class="text-xl font-bold tracking-tight">Service<span class="text-orange-400">Link</span></h1>
         </div>
-        <button class="text-gray-500">⋯</button>
-      </div>
-      
-      <div class="bg-gray-100 rounded-lg p-3 mb-3">
-        <p class="text-sm font-semibold text-gray-800">Professional Electrical Installation & Repair</p>
-        <p class="text-xs text-gray-600 mt-1">Electrical wiring, troubleshooting, and repair services for homes and offices.</p>
-      </div>
+        <div class="text-orange-400 font-bold text-sm cursor-pointer">Upgrade</div>
+    </header>
 
-      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
-        <span>⭐ 4.8 (245 reviews)</span>
-        <span>📍 Ikoyi, Lagos</span>
-      </div>
-
-      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
-    </div>
-
-    <!-- Job Card 2 -->
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
-      <div class="flex items-start gap-3 mb-3">
-        <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full" alt="">
-        <div class="flex-1">
-          <h4 class="font-bold text-gray-800">Grace T.</h4>
-          <p class="text-xs text-gray-500">Graphic Designer • Abuja</p>
+    <section class="py-4 border-b border-white/10">
+        <div class="flex overflow-x-auto gap-4 px-5 no-scrollbar cursor-pointer" onclick="window.location.href='trading-home.html'">
+            <div class="min-w-[120px] h-40 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 flex flex-col justify-between hover:bg-white/20 transition">
+                <span class="text-xs font-bold text-gray-300">BTCUSD</span>
+                <div class="h-10 w-full border-b border-orange-400/30"></div>
+                <div>
+                    <p class="text-sm font-bold">68,656.85</p>
+                    <p class="text-[10px] text-red-400">-0.38%</p>
+                </div>
+            </div>
+            <div class="min-w-[120px] h-40 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 flex flex-col justify-between hover:bg-white/20 transition">
+                <span class="text-xs font-bold text-gray-300">XAUUSD</span>
+                <div class="h-10 w-full border-b border-yellow-400/30"></div>
+                <div>
+                    <p class="text-sm font-bold">4,497.48</p>
+                    <p class="text-[10px] text-red-400">-3.29%</p>
+                </div>
+            </div>
+            <div class="min-w-[120px] h-40 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 flex flex-col justify-between hover:bg-white/20 transition">
+                <span class="text-xs font-bold text-gray-300">EURUSD</span>
+                <div class="h-10 w-full border-b border-green-400/30"></div>
+                <div>
+                    <p class="text-sm font-bold">1.1571</p>
+                    <p class="text-[10px] text-green-400">+0.16%</p>
+                </div>
+            </div>
+             <div class="min-w-[120px] h-40 bg-white/5 border-2 border-dashed border-white/20 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-plus text-white/40"></i>
+            </div>
         </div>
-        <button class="text-gray-500">⋯</button>
-      </div>
-      
-      <div class="bg-gray-100 rounded-lg p-3 mb-3">
-        <p class="text-sm font-semibold text-gray-800">Logo Design & Brand Identity</p>
-        <p class="text-xs text-gray-600 mt-1">Professional logo design, business cards, and complete branding solutions.</p>
-      </div>
+    </section>
 
-      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
-        <span>⭐ 4.9 (312 reviews)</span>
-        <span>📍 Maitama, Abuja</span>
-      </div>
+    <main class="max-w-2xl mx-auto">
+        
+        <article class="p-5 border-b border-white/10 hover:bg-white/5 transition">
+            <div class="flex gap-4">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border border-orange-400" alt="User">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold flex items-center gap-1">
+                                Lurd Lü VH <i class="fas fa-check-circle text-blue-400 text-xs"></i>
+                            </h3>
+                            <p class="text-xs text-white/60">Ibadan, Nigeria • <span class="text-orange-400">★★★★★ (4.9)</span></p>
+                        </div>
+                        <i class="fas fa-ellipsis-h text-white/40"></i>
+                    </div>
+                    <p class="mt-2 text-sm leading-relaxed text-white/90">
+                        Professional UI/UX Designer & Web Developer. I am currently available for new projects on ServiceLink. Let's build something great!
+                    </p>
+                    <div class="mt-3 rounded-2xl overflow-hidden border border-white/10 bg-black/20">
+                        <div class="h-48 w-full flex items-center justify-center text-white/20 italic">
+                            [Portfolio Image Preview]
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-4 text-white/50 text-xs px-2">
+                        <span><i class="far fa-comment mr-2"></i> 24</span>
+                        <span><i class="fas fa-retweet mr-2"></i> 12</span>
+                        <span><i class="far fa-heart mr-2 text-red-400"></i> 156</span>
+                        <span><i class="fas fa-share-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
-    </div>
+        <article class="p-5 border-b border-white/10 hover:bg-white/5 transition">
+            <div class="flex gap-4">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border border-orange-400" alt="User">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">Grace T.</h3>
+                            <p class="text-xs text-white/60">Abuja, Nigeria • <span class="text-orange-400">★★★★☆ (4.5)</span></p>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm leading-relaxed text-white/90">
+                        Offering top-notch catering and event planning. Check out my latest menu for weddings and corporate events. 🍲
+                    </p>
+                </div>
+            </div>
+        </article>
 
-    <!-- Job Card 3 -->
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
-      <div class="flex items-start gap-3 mb-3">
-        <img src="https://randomuser.me/api/portraits/men/50.jpg" class="w-12 h-12 rounded-full" alt="">
-        <div class="flex-1">
-          <h4 class="font-bold text-gray-800">Ibrahim K.</h4>
-          <p class="text-xs text-gray-500">Plumber • Kano</p>
-        </div>
-        <button class="text-gray-500">⋯</button>
-      </div>
-      
-      <div class="bg-gray-100 rounded-lg p-3 mb-3">
-        <p class="text-sm font-semibold text-gray-800">Plumbing & Water System Installation</p>
-        <p class="text-xs text-gray-600 mt-1">Complete plumbing services including installations, repairs, and maintenance.</p>
-      </div>
+    </main>
 
-      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
-        <span>⭐ 4.7 (189 reviews)</span>
-        <span>📍 Fagge, Kano</span>
-      </div>
-
-      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
-    </div>
-
-    <!-- Job Card 4 -->
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-4 border">
-      <div class="flex items-start gap-3 mb-3">
-        <img src="https://randomuser.me/api/portraits/women/52.jpg" class="w-12 h-12 rounded-full" alt="">
-        <div class="flex-1">
-          <h4 class="font-bold text-gray-800">Amara C.</h4>
-          <p class="text-xs text-gray-500">Web Developer • Port Harcourt</p>
-        </div>
-        <button class="text-gray-500">⋯</button>
-      </div>
-      
-      <div class="bg-gray-100 rounded-lg p-3 mb-3">
-        <p class="text-sm font-semibold text-gray-800">Website Development & Design</p>
-        <p class="text-xs text-gray-600 mt-1">Custom website design, responsive layouts, and e-commerce solutions.</p>
-      </div>
-
-      <div class="flex justify-between items-center text-xs text-gray-600 mb-3">
-        <span>⭐ 4.9 (428 reviews)</span>
-        <span>📍 Rumuola, Port Harcourt</span>
-      </div>
-
-      <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">Hire Now</button>
-    </div>
-
-  </section>
-
-  <!-- Bottom Navigation -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
-    <button class="flex flex-col items-center gap-1 text-orange-500">
-      <span class="text-2xl">🏠</span>
-      <span class="text-xs">Home</span>
-    </button>
-    <button class="flex flex-col items-center gap-1 text-gray-600">
-      <span class="text-2xl">🔍</span>
-      <span class="text-xs">Search</span>
-    </button>
-    <button class="flex flex-col items-center gap-1 text-gray-600">
-      <span class="text-2xl">➕</span>
-      <span class="text-xs">Browse</span>
-    </button>
-    <button class="flex flex-col items-center gap-1 text-gray-600">
-      <span class="text-2xl">💬</span>
-      <span class="text-xs">Messages</span>
-    </button>
-    <button class="flex flex-col items-center gap-1 text-gray-600">
-      <span class="text-2xl">👤</span>
-      <span class="text-xs">Profile</span>
-    </button>
-  </nav>
-
-  <!-- Menu Sidebar -->
-  <div id="menuSidebar" class="hidden fixed inset-0 z-50">
-    <div class="absolute inset-0 bg-black/50" onclick="closeMenu()"></div>
-    <div class="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-lg p-4">
-      <button onclick="closeMenu()" class="text-2xl mb-4">✕</button>
-      <h3 class="text-lg font-bold mb-4">Menu</h3>
-      <ul class="space-y-3">
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Settings</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Account</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Bookings</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Reviews</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Help & Support</a></li>
-        <li><a href="#" class="text-gray-700 hover:text-orange-500">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Trading Modal (Hidden by default) -->
-  <div id="tradingModal" class="hidden fixed inset-0 bg-black/60 z-50 flex justify-center items-end">
-    <div class="bg-white w-full h-5/6 rounded-t-3xl overflow-y-auto">
-      <div class="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
-        <h2 id="tradingTitle" class="text-lg font-bold"></h2>
-        <button onclick="closeTrading()" class="text-2xl">✕</button>
-      </div>
-      
-      <div class="p-4">
-        <!-- Trading Chart Placeholder -->
-        <div class="bg-gray-200 rounded-lg h-64 mb-4 flex items-center justify-center">
-          <p class="text-gray-600">📊 Trading Chart (View Only)</p>
-        </div>
-
-        <!-- Price Info -->
-        <div class="bg-gray-50 rounded-lg p-4 mb-4">
-          <div class="flex justify-between mb-2">
-            <span class="text-gray-600">Current Price</span>
-            <span id="priceValue" class="font-bold text-lg"></span>
-          </div>
-          <div class="flex justify-between mb-2">
-            <span class="text-gray-600">24h Change</span>
-            <span id="priceChange" class="font-bold text-lg text-green-600">+2.5%</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-gray-600">Market Cap</span>
-            <span id="marketCap" class="font-bold">$2.5T</span>
-          </div>
-        </div>
-
-        <!-- Chat Section -->
-        <h3 class="font-bold mb-3">Live Chat</h3>
-        <div class="bg-gray-100 rounded-lg p-3 h-48 mb-4 overflow-y-auto">
-          <p class="text-sm text-gray-600 mb-2">💬 Trading community discussing live prices...</p>
-          <p class="text-xs text-gray-500">(Chat feature coming soon)</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function openMenu() {
-      document.getElementById('menuSidebar').classList.remove('hidden');
-    }
-
-    function closeMenu() {
-      document.getElementById('menuSidebar').classList.add('hidden');
-    }
-
-    function openTrading(type) {
-      const tradingModal = document.getElementById('tradingModal');
-      const titleMap = {
-        'forex': '📈 Forex Pair',
-        'commodity': '🛢️ Commodity',
-        'stock': '📊 Stock',
-        'crypto': '🪙 Cryptocurrency'
-      };
-      const priceMap = {
-        'forex': 'EUR/USD: 1.0850',
-        'commodity': 'WTI Crude: $78.45',
-        'stock': 'AAPL: $182.52',
-        'crypto': 'BTC: $42,580'
-      };
-
-      document.getElementById('tradingTitle').textContent = titleMap[type];
-      document.getElementById('priceValue').textContent = priceMap[type];
-
-      tradingModal.classList.remove('hidden');
-    }
-
-    function closeTrading() {
-      document.getElementById('tradingModal').classList.add('hidden');
-    }
-  </script>
+    <nav class="fixed bottom-0 w-full backdrop-blur-xl bg-blue-900/90 border-t border-white/10 flex justify-around py-4 z-50">
+        <i class="fas fa-home text-orange-400 text-xl cursor-pointer"></i>
+        <i class="fas fa-search text-white/60 hover:text-white text-xl cursor-pointer"></i>
+        <i class="fas fa-store text-white/60 hover:text-white text-xl cursor-pointer"></i> 
+        <i class="fas fa-bell text-white/60 hover:text-white text-xl cursor-pointer"></i>
+        <i class="fas fa-envelope text-white/60 hover:text-white text-xl cursor-pointer"></i>
+    </nav>
 
 </body>
 </html>
